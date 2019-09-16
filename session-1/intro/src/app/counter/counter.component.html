@@ -1,6 +1,17 @@
-<div class="w3-container w3-padding">
-    <h4>The count is:</h4>
-    <h3>{{mark}}</h3>
-    <button (click)="onStart()">Start</button>
-    <button (click)="onPause()">Pause</button>
+<div class="w3-container w3-padding wrapper">
+    <h4 [hidden]="false">The count is:</h4>
+    <p [style.color]="mark%2==0 ? 'red' : 'green'">{{mark}}</p>
+    <input type="text" [(ngModel)]="mark">
+    <br>
+    <br>
+    <button 
+        (click)="isPaused ? onStart() : onPause()"
+        class="w3-button w3-blue"
+        [class.w3-red]="isPaused"
+    >
+        {{ isPaused ? 'Start' : 'Pause' }}
+    </button>
+    <hr>
 </div>
+
+<p>{{ man.place.city}}</p>

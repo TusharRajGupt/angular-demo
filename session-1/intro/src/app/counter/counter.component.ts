@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-counter',
@@ -7,21 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
 
+  @Input() id: number;
   mark: number;
   timer: any;
+  isPaused = true;
+
+  now: Date;
+  half = 0.5;
+  place = "Pune"
+  man = {
+    name: 'bob'
+  }
+
 
   constructor() { }
 
   ngOnInit() {
     this.mark = 0;
+    this.now = new Date();
+    setTimeout(() => {
+      console.log(this.man)
+      this.man['place'] = {city: 'Pune'}
+
+    }, 1000);
   }
 
   onStart() {
     this.timer = setInterval(this.increment, 1000);
+    this.isPaused = false;
   }
 
   onPause() {
     clearInterval(this.timer)
+    this.isPaused = true;
   }
 
   increment = () => {
