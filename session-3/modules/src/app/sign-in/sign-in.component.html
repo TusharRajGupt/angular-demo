@@ -1,0 +1,48 @@
+<div class="w3-container">
+    <h1>Sign In</h1>
+    <form (ngSubmit)="onFormSubmit()" #f="ngForm">
+        <input 
+            type="text"
+            placeholder="Username"
+            class="w3-input"
+            name="username"
+            [(ngModel)]="signinForm.username"
+            required
+            minlength="4"
+            #spy="ngModel"
+        >
+        <br>
+            
+        <p [hidden]="spy.valid || spy.pristine">Error</p>
+            
+        <input 
+            type="password" 
+            placeholder="Password"
+            class="w3-input"
+            name="password"
+            [(ngModel)]="signinForm.password"
+            required
+        >
+        <br>
+
+        <button 
+            type="submit" 
+            class="w3-btn w3-blue"
+            [disabled]="!f.valid"
+        >
+            Submit
+        </button>
+
+        <button 
+            class="w3-btn w3-blue"
+            (click)="f.reset()"
+        >
+            Reset
+        </button>
+
+        <br>
+
+        <pre>{{ f.value | json }}</pre>
+
+    </form>
+</div>

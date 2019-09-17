@@ -1,0 +1,40 @@
+<form class="w3-container w3-padding" [formGroup]="signupForm" (ngSubmit)="onFormSubmit()">
+    <input 
+        type="text"
+        placeholder="Username"
+        class="w3-input"
+        formControlName="username"
+        required
+    >
+    <br>
+    <input 
+    type="text"
+    placeholder="Email"
+    class="w3-input"
+    formControlName="email"
+    >
+    <br>
+    <input 
+    type="text"
+    placeholder="Phone"
+    class="w3-input"
+    formControlName="phone"
+    >
+    <br>
+
+    <button 
+        class="w3-button w3-blue" 
+        type="submit"
+        [disabled]="!signupForm.valid"
+    >
+        Submit
+    </button>
+    <button 
+        class="w3-button w3-blue" 
+        type="reset"
+        (click)="signupForm.reset();"
+    >
+        Reset
+    </button>
+    <pre>Value: {{signupForm.value | json}}</pre>
+</form>

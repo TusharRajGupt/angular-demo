@@ -14,11 +14,11 @@ export class CounterComponent implements OnInit {
   isPaused = true;
 
   now: Date;
-  half = 0.5;
+  half = '0.5x';
   place = "Pune"
-  man = {
-    name: 'bob'
-  }
+  man = { name: 'bob' }
+
+  sites = ['Ind', 'US', 'UK', 'Aus']
 
 
   constructor() { }
@@ -27,7 +27,6 @@ export class CounterComponent implements OnInit {
     this.mark = 0;
     this.now = new Date();
     setTimeout(() => {
-      console.log(this.man)
       this.man['place'] = {city: 'Pune'}
 
     }, 1000);

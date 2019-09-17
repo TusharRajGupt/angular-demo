@@ -4,14 +4,24 @@
     <input type="text" [(ngModel)]="mark">
     <br>
     <br>
-    <button 
-        (click)="isPaused ? onStart() : onPause()"
-        class="w3-button w3-blue"
-        [class.w3-red]="isPaused"
-    >
+    <button (click)="isPaused ? onStart() : onPause()" class="w3-button w3-blue" [class.w3-red]="isPaused">
         {{ isPaused ? 'Start' : 'Pause' }}
     </button>
     <hr>
 </div>
 
-<p>{{ man.place.city}}</p>
+<p>{{half|percent}}</p>
+
+
+
+
+<select #sel [(ngModel)]="country">
+    <option *ngFor="let site of sites" [value]="site">{{site}}</option>
+</select>
+
+<div [ngSwitch]="country">
+    <h3 *ngSwitchCase="'Ind'">First</h3>
+    <h3 *ngSwitchCase="'US'">Second</h3>
+    <h3 *ngSwitchCase="'UK'">Third</h3>
+    <h3 *ngSwitchDefault>Default</h3>
+</div>
