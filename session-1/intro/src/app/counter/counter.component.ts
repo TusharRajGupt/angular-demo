@@ -12,29 +12,18 @@ export class CounterComponent implements OnInit {
   mark: number;
   timer: any;
   isPaused = true;
-
-  now: Date;
-  half = '0.5x';
   place = "Pune"
-  man = { name: 'bob' }
-
-  sites = ['Ind', 'US', 'UK', 'Aus']
-
 
   constructor() { }
 
   ngOnInit() {
     this.mark = 0;
-    this.now = new Date();
-    setTimeout(() => {
-      this.man['place'] = {city: 'Pune'}
-
-    }, 1000);
   }
 
-  onStart() {
+  onStart(e) {
     this.timer = setInterval(this.increment, 1000);
     this.isPaused = false;
+    console.log(e.target)
   }
 
   onPause() {

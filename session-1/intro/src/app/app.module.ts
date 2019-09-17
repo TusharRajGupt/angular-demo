@@ -4,11 +4,15 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
+import { HonorificPipe } from './honorific.pipe';
+import { ShowcaseComponent } from './showcase/showcase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    HonorificPipe,
+    ShowcaseComponent,
   ],
   imports: [
     BrowserModule,
