@@ -9,12 +9,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class HonorificPipe implements PipeTransform {
 
-  transform(name: string, gender = "Male", knight?: string): string {
-    let title = gender == "Male" ? 'Mr.' : 'Ms.'
-    if(knight){
-      title = gender == "Male" ? 'Sir' : 'Dame'
-    }
-    return title + ' ' + name;
+  transform(name: string, gender = 'Male', knight?: string): string {
+    return 'Mr. ' + name;
   }
+
+  // transform(name: string, gender = 'Male', knight?: string): string {
+  //   let title = gender == 'Male' ? 'Mr.' : 'Ms.'
+  //   if(knight){
+  //     title = gender == 'Male' ? 'Sir' : 'Dame'
+  //   }
+  //   return title + ' ' + name;
+  // }
 
 }
