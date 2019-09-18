@@ -6,21 +6,54 @@
         formControlName="username"
         required
     >
+    <div class="w3-pale-red" *ngIf="username.dirty && username.errors?.required">
+        Username is required.
+    </div>
+    <div class="w3-pale-red" *ngIf="username.errors?.minlength">
+        Username must be at least 4 characters long.
+    </div>
+    <div class="w3-pale-red" *ngIf="username.errors?.maxlength">
+        Username can't be longer than 8 characters.
+    </div>
     <br>
+
     <input 
-    type="text"
-    placeholder="Email"
-    class="w3-input"
-    formControlName="email"
+        type="text"
+        placeholder="Email"
+        class="w3-input"
+        formControlName="email"
+    >
+    <div class="w3-pale-red" *ngIf="email.errors?.email">
+        Not an email
+    </div>
+    <br>
+
+    <input 
+        type="text"
+        placeholder="Phone"
+        class="w3-input"
+        formControlName="phone"
+    >
+    <br>
+
+    <input 
+        type="password"
+        placeholder="Password"
+        class="w3-input"
+        formControlName="password"
     >
     <br>
     <input 
-    type="text"
-    placeholder="Phone"
-    class="w3-input"
-    formControlName="phone"
+        type="password"
+        placeholder="Retype Password"
+        class="w3-input"
+        formControlName="retypePassword"
     >
+    <div class="w3-pale-red" *ngIf="signupForm.errors?.match">
+        Passwords don't match
+    </div>
     <br>
+    
 
     <button 
         class="w3-button w3-blue" 
