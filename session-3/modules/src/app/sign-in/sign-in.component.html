@@ -8,12 +8,11 @@
             name="username"
             [(ngModel)]="signinForm.username"
             required
-            minlength="4"
             #spy="ngModel"
         >
+        <p [hidden]="spy.valid || spy.pristine" class="w3-red">Username is required</p>
         <br>
             
-        <p [hidden]="spy.valid || spy.pristine">Error</p>
             
         <input 
             type="password" 
@@ -22,7 +21,9 @@
             name="password"
             [(ngModel)]="signinForm.password"
             required
+            #pwd="ngModel"
         >
+        <p [hidden]="pwd.valid || pwd.pristine" class="w3-red">Username is required</p>
         <br>
 
         <button 
