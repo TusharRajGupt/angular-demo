@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ErrorPageNotFoundComponent } from './error-page-not-found/error-page-not-found.component';
+import { ErrorForbiddenComponent } from './error-forbidden/error-forbidden.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent, canActivate: [CanActivateGuard]},
   {path: 'signin', component: SignInComponent},
   {path: 'signup', component: SignUpComponent, canDeactivate: [CanDeactivateGuard]},
+  {path: 'errorForbidden', component: ErrorForbiddenComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: ErrorPageNotFoundComponent},
 ];

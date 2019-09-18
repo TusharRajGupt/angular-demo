@@ -18,7 +18,7 @@ export class CanActivateGuard implements CanActivate {
     if(currentUser) {
         return true;
     } else {
-        this.router.navigate(['/signin']);
+        this.router.navigate(['/errorForbidden']);
         return false;
     }
   }

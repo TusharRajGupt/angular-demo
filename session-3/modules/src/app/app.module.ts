@@ -9,6 +9,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ErrorPageNotFoundComponent } from './error-page-not-found/error-page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
+import { ErrorForbiddenComponent } from './error-forbidden/error-forbidden.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     SignUpComponent,
     ErrorPageNotFoundComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorForbiddenComponent,
   ],
   imports: [
     BrowserModule,
