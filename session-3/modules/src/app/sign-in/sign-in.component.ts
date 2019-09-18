@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface myform {
     username: string;
@@ -14,7 +15,7 @@ export class SignInComponent implements OnInit {
 
   signinForm: myform;
 
-  constructor() {
+  constructor(private router: Router) {
     this.signinForm = {
       username: '',
       password: '',
@@ -27,6 +28,7 @@ export class SignInComponent implements OnInit {
   onFormSubmit(){
     console.log(this.signinForm);
     localStorage.setItem('user', this.signinForm.username);
+    this.router.navigate(['/profile']);
   }
 
 }

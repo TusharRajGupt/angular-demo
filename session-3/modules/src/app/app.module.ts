@@ -10,6 +10,7 @@ import { ErrorPageNotFoundComponent } from './error-page-not-found/error-page-no
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorForbiddenComponent } from './error-forbidden/error-forbidden.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ErrorForbiddenComponent } from './error-forbidden/error-forbidden.compo
     ProfileComponent,
     HomeComponent,
     ErrorForbiddenComponent,
+    SignOutComponent,
   ],
   imports: [
     BrowserModule,
