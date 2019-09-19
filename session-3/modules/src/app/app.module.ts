@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { ErrorForbiddenComponent } from './error-forbidden/error-forbidden.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { QuoteComponent } from './quote/quote.component';
+import { JokeComponent } from './joke/joke.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { QuoteComponent } from './quote/quote.component';
     ErrorForbiddenComponent,
     SignOutComponent,
     QuoteComponent,
+    JokeComponent,
   ],
   imports: [
     BrowserModule,
