@@ -14,7 +14,7 @@ export class CanActivateGuard implements CanActivate {
     let url: string = state.url;
 
     let currentUser = localStorage.getItem('user');
-    console.log(currentUser);
+    // console.log(currentUser);
     if(currentUser) {
         return true;
     } else {
