@@ -13,7 +13,7 @@ import { SignOutComponent } from './sign-out/sign-out.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'profile', component: ProfileComponent, canActivate: [CanActivateGuard]},
+  {path: 'profile/:id', component: ProfileComponent, canActivate: [CanActivateGuard]},
   {path: 'signin', component: SignInComponent},
   {path: 'signup', component: SignUpComponent, canDeactivate: [CanDeactivateGuard]},
   {path: 'signout', component: SignOutComponent},

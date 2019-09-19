@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -9,10 +10,11 @@ export class ProfileComponent implements OnInit {
 
   user: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.user = localStorage.getItem('user');
+    this.user = this.route.snapshot.paramMap.get('id');
+    console.log(this.route.snapshot)
   }
 
 }

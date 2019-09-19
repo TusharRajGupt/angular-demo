@@ -28,7 +28,7 @@ export class SignInComponent implements OnInit {
   onFormSubmit(){
     console.log(this.signinForm);
     localStorage.setItem('user', this.signinForm.username);
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/profile', this.signinForm.username]);
   }
 
 }

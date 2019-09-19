@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentUser = localStorage.getItem('user') || null;
+  currentUser = localStorage.getItem('user') || '';
 }
