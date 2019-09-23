@@ -1,0 +1,14 @@
+.products {
+  width: 800px;
+  height: 90vh;
+  margin: 10px;
+  padding: 10px;
+  background-color: azure;
+  float: left;
+}
+
+.description {
+  margin-left: 150px;
+
+}
+

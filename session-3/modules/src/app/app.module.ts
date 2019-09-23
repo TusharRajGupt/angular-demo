@@ -12,8 +12,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorForbiddenComponent } from './error-forbidden/error-forbidden.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
-import { QuoteComponent } from './quote/quote.component';
 import { JokeComponent } from './joke/joke.component';
+import { TitlePipe } from './title.pipe';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import { JokeComponent } from './joke/joke.component';
     HomeComponent,
     ErrorForbiddenComponent,
     SignOutComponent,
-    QuoteComponent,
     JokeComponent,
+    TitlePipe,
   ],
   imports: [
     BrowserModule,

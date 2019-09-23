@@ -1,5 +1,6 @@
 <div class="w3-container w3-padding wrapper">
-    <h4 [hidden]="false">The count is:</h4>
+    
+    <h4>The count is:</h4>
     <p [style.color]="mark%2==0 ? 'red' : 'green'">{{mark}}</p>
     <input [type]="text" [(ngModel)]="mark">
     <br>
@@ -7,6 +8,9 @@
     <button (click)="isPaused ? onStart($event) : onPause()" class="w3-button w3-blue" [class.w3-red]="isPaused">
         {{ isPaused ? 'Start' : 'Pause' }}
     </button>
+    <!-- <button (click)="onStart()" class="w3-button w3-blue" [class.w3-red]="isPaused">
+       Start
+    </button> -->
     <hr>
 </div>
 

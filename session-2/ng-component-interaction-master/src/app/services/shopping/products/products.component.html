@@ -1,0 +1,17 @@
+<div class="products">
+  <h1>Products</h1>
+
+  <div class="list-group-item clearfix" *ngFor="let product of products">
+    <span class="pull-left">
+      <img [src]="product.imgUrl" alt="{{ product.name }}" class="img-responsive" style="max-height: 100px;">
+    </span>
+    <div class="description">
+      <h4 class="list-group-item-heading">{{product.name}}</h4>
+      <p class="list-group-item-text">{{product.cost | currency}}</p>
+    </div>
+    <div class="pull-right">
+      <button style="cursor: pointer" class="add-to-cart" (click)="addToCart(product)">
+          Add
+      </button>
+    </div>
+  </div>

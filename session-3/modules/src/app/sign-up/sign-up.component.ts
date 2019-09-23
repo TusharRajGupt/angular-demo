@@ -16,9 +16,9 @@ export class SignUpComponent implements OnInit, OnChanges {
   // });
 
   signupForm = this.fb.group({
-    username: ['', [Validators.minLength(4), Validators.maxLength(8)]],
+    username: ['', [Validators.minLength(4), Validators.maxLength(2)]],
     email: ['', Validators.email],
-    phone: [''],
+    phone: ['123'],
     password: [''],
     retypePassword: [''],
   }, {validators: matchValidator});

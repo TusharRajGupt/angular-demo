@@ -1,0 +1,11 @@
+<div style="text-align: center">
+  <h1>Component Interaction using Input binding</h1>
+
+  <div class="parent">
+
+    <input type="button" value="Increase Count" (click)="increaseCounter();">
+
+    <app-data-binding-child [counter]="parentCounter" >
+    </app-data-binding-child>
+  </div>
+</div>

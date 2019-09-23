@@ -8,12 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class JokeComponent implements OnInit {
 
-  joke;
+  joke ;
   showError = false;
+
+  rootItems: Array<string>
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.rootItems.push()
   }
 
   showJoke() {

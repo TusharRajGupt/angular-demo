@@ -1,0 +1,12 @@
+<div style="text-align: center">
+  <h1>Component Interaction using Output binding</h1>
+
+  <div class="parent">
+    <div>
+      <h3> Parent Count: {{parentCounter}} </h3>
+    </div>
+
+    <app-output-binding-child (countUpdated)="onCountUpdated($event)">
+    </app-output-binding-child>
+  </div>
+</div>

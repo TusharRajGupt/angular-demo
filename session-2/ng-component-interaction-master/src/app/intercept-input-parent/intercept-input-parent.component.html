@@ -1,0 +1,10 @@
+<div style="text-align: center">
+  <h1>Intercepting Input binding</h1>
+
+  <div class="parent">
+
+    <input type="button" value="Increase Count" (click)="increaseCounter();">
+
+    <app-intercept-input-child [childCounter]="parentCounter"></app-intercept-input-child>
+  </div>
+</div>

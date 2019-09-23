@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy Input } from '@angular/core';
 
 
 @Component({
@@ -6,12 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css']
 })
-export class CounterComponent implements OnInit {
+export class CounterComponent implements OnInit, OnDestroy {
 
   @Input() id: number;
   mark: number;
   timer: any;
-  isPaused = true;
+  isPaused: boolean = true;
   place = "Pune"
 
   constructor() { }
@@ -19,6 +19,7 @@ export class CounterComponent implements OnInit {
   ngOnInit() {
     this.mark = 0;
   }
+  
 
   onStart(e) {
     this.timer = setInterval(this.increment, 1000);
