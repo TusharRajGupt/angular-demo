@@ -1,4 +1,3 @@
-let outputs;
 
 const double = (a) => {
     return a * 2
