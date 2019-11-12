@@ -1,14 +1,14 @@
-let factor = 60;
+let factor = 80;
 
-const hourToMinute = (hr) => {
-    return hr*factor + ' minutes'
+const dollarToINR = (hr) => {
+    return hr*factor + ' rupees'
 }
 
 outputs = {
-    output1: hourToMinute(3),
-    output2: hourToMinute(3),
-    output3: hourToMinute(3),
+    output1: dollarToINR(3),
+    output2: dollarToINR(3),
+    output3: dollarToINR(3),
 }
 
 
-//window.globalVariable = JSON.stringify(outputs, null, 2);
+window.globalVariable = JSON.stringify(outputs, null, 2);
