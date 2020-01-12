@@ -5,8 +5,8 @@ _old = "abc"
 _new = _old + "d"
 
 
-//_old = [1,2,3]
-//_new = _old.push(4);
+_old = [1,2,3]
+_new = _old.push(4);
 
 //_old = [1,2,3]
 //_new = _old

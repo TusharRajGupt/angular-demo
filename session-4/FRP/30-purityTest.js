@@ -1,6 +1,6 @@
 let factor = 80;
 
-const dollarToINR = (hr) => {
+const dollarToINR = (hr, factor) => {
     return hr*factor + ' rupees'
 }
 
