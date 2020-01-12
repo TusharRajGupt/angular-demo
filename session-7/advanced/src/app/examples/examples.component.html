@@ -1,13 +1,22 @@
-<p>The list:</p>
-<!-- <app-item></app-item>
-<app-item></app-item>
-<app-item></app-item> -->
+
+<br>
 <select>
     <option *ngFor="let num of nums">{{num}}</option>
 </select>
+<br>
 
+<br>
+<select>
+    <div *ngFor="let num of nums">
+        <option *ngIf="num%2==0">{{num}}</option>
+    </div>
+</select>
+<br>
+
+<br>
 <select>
     <ng-container *ngFor="let num of nums">
         <option *ngIf="num%2==0">{{num}}</option>
     </ng-container>
 </select>
+<br>
