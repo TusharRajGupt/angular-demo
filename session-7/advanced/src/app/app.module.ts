@@ -11,6 +11,8 @@ import { ExamplesComponent } from './examples/examples.component';
 import { List2Component } from './list2/list2.component';
 import { Item2Component } from './list2/item2/item2.component';
 import { LabelComponent } from './list2/item2/label.component';
+import { List3Component } from './list3/list3.component';
+import { Item3Component } from './list3/item3/item3.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { LabelComponent } from './list2/item2/label.component';
     ExamplesComponent,
     List2Component,
     Item2Component,
-    LabelComponent
+    LabelComponent,
+    List3Component,
+    Item3Component
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,9 @@ const httpOptions = {
 
 export class RestService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+        console.log('Initiated');
+     }
 
     private extractData(res: Response) {
         let body = res;
