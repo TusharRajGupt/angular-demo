@@ -1,6 +1,8 @@
 import { LabelComponent } from './label.component';
-import { Component, OnInit, AfterViewInit, Input, ViewChild, ViewChildren, ElementRef, AfterContentInit, ContentChild } from '@angular/core';
-import { SSL_OP_TLS_BLOCK_PADDING_BUG } from 'constants';
+import { Component, OnInit, AfterViewInit, Input,
+  ViewChild, ViewChildren, ElementRef, AfterContentInit,
+  ContentChild, TemplateRef
+} from '@angular/core';
 
 @Component({
   selector: 'app-item2',
@@ -10,6 +12,8 @@ import { SSL_OP_TLS_BLOCK_PADDING_BUG } from 'constants';
 export class Item2Component implements OnInit, AfterViewInit, AfterContentInit {
 
   @Input() user;
+
+  @Input() tpl: TemplateRef<any>;
 
   // @ViewChild('labelRef') label;
 
