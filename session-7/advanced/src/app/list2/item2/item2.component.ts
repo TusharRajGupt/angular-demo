@@ -13,7 +13,6 @@ export class Item2Component implements OnInit, AfterViewInit, AfterContentInit {
 
   // @ViewChild('labelRef') label;
 
-  
   // @ViewChild('labelRef', {static: false, read: ElementRef}) label;
   
   // @ViewChildren(LabelComponent) label;

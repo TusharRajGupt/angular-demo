@@ -18,3 +18,11 @@
         {{user2?.company.name}}
     </div>
 </app-item2>
+
+<ng-template #end let-count="total">
+    Found {{count}} users.
+</ng-template>
+
+<div *ngTemplateOutlet="end; context: {total: users.length}">
+
+</div>
