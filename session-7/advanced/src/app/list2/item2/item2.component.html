@@ -1,5 +1,18 @@
-<div class="w3-card w3-pale-yellow w3-padding w3-margin">
-    {{user?.name}}
+<!-- <div class="w3-card w3-pale-yellow w3-padding w3-margin">
+    <h3>{{user?.name}}</h3>
+    Contact: 
     <ng-content select=".contact"></ng-content>
-</div>
+    <br>
+    Company: 
+    <ng-content select=".company"></ng-content>
+</div> -->
 
+
+<div class="w3-card w3-pale-yellow w3-padding w3-margin">
+    <h3 #headingRef>{{user?.name}}</h3>
+    <app-label #labelRef [text]="'Contact:'"></app-label>
+    <ng-content select=".contact"></ng-content>
+    <br>
+    <app-label [text]="'Company:'"></app-label>
+    <ng-content select=".company"></ng-content>
+</div>

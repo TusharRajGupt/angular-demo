@@ -10,6 +10,7 @@ import { ItemComponent } from './list/item/item.component';
 import { ExamplesComponent } from './examples/examples.component';
 import { List2Component } from './list2/list2.component';
 import { Item2Component } from './list2/item2/item2.component';
+import { LabelComponent } from './list2/item2/label.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Item2Component } from './list2/item2/item2.component';
     ItemComponent,
     ExamplesComponent,
     List2Component,
-    Item2Component
+    Item2Component,
+    LabelComponent
   ],
   imports: [
     BrowserModule,
