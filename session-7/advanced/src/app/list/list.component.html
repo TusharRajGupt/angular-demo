@@ -1,2 +1,5 @@
 <p>The list:</p>
-<app-item  *ngFor="let user of users" [user]="user"></app-item>
+<app-item  *ngFor="let user of users" [user]="user">
+    <p>{{user.email}}</p>
+    <h5>{{user.phone}}</h5>
+</app-item>
