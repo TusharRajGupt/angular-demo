@@ -3,6 +3,7 @@
 <app-item2 [user]="user1">
     <div #contactRef class="contact">
         {{user1?.phone}}
+        {{user1?.email}}
     </div>
 
     <div class="company">
@@ -10,6 +11,7 @@
     </div>
 </app-item2>
 
+<!-- <app-item2 [user]="user2"> -->
 <app-item2 [user]="user2" [tpl]="footnote">
     <div #contactRef class="contact">
         {{user2?.email}}
@@ -23,11 +25,19 @@
     Found {{count}} users.
 </ng-template>
 
-<div *ngTemplateOutlet="end; context: {total: users.length}">
-
+<div *ngTemplateOutlet="end; context {total: 3}">
 </div> -->
 
-<!-- <ng-template #footnote let-index="i">
+<!-- <ng-template #end let-count="total">
+    Found {{count}} users.
+</ng-template>
+
+<div *ngTemplateOutlet="end; context: {total: users.length}">
+</div> -->
+
+<ng-template >
     <hr>
-    Item {{index}} ended
-</ng-template> -->
+    <div>
+        Item x ended
+    </div>
+</ng-template>

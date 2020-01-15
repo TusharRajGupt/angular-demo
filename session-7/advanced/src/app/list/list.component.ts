@@ -4,7 +4,8 @@ import { RestService } from '../rest.service';
 @Component({
     selector: 'app-list',
     templateUrl: './list.component.html',
-    styleUrls: ['./list.component.scss']
+    styleUrls: ['./list.component.scss'],
+    // providers: [RestService]
 })
 export class ListComponent implements OnInit {
 

@@ -11,9 +11,9 @@ const httpOptions = {
 };
 
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable(
+    { providedIn: 'root' }
+)
 
 export class RestService {
 

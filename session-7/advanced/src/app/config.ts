@@ -10,6 +10,12 @@ export const APP_CONFIG: OrgConfig = {
     city: 'Pune',
 }
 
+// export const CONFIG_TOKEN = new InjectionToken<OrgConfig>('CONFIG_TOKEN');
+
+
+
+
+
 export const CONFIG_TOKEN = new InjectionToken<OrgConfig>('CONFIG_TOKEN', {
     providedIn: 'root',
     factory: () => APP_CONFIG,
