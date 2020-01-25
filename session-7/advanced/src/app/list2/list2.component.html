@@ -21,11 +21,11 @@
     </div>
 </app-item2>
 
-<!-- <ng-template #end let-count="total">
-    Found {{count}} users.
+<!-- <ng-template #end>
+    Found 2 users.
 </ng-template>
 
-<div *ngTemplateOutlet="end; context {total: 3}">
+<div *ngTemplateOutlet="end">
 </div> -->
 
 <!-- <ng-template #end let-count="total">
@@ -35,9 +35,9 @@
 <div *ngTemplateOutlet="end; context: {total: users.length}">
 </div> -->
 
-<ng-template >
+<ng-template #footnote let-index="i">
     <hr>
     <div>
-        Item x ended
+        Item {{index}} ended
     </div>
 </ng-template>

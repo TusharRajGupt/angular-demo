@@ -8,15 +8,12 @@ export interface OrgConfig {
 export const APP_CONFIG: OrgConfig = {
     org: 'Talentica',
     city: 'Pune',
-}
+};
 
-// export const CONFIG_TOKEN = new InjectionToken<OrgConfig>('CONFIG_TOKEN');
-
-
+// export const myToken = new InjectionToken<OrgConfig>('CONFIG_TOKEN');
 
 
-
-export const CONFIG_TOKEN = new InjectionToken<OrgConfig>('CONFIG_TOKEN', {
+export const myToken = new InjectionToken<OrgConfig>('CONFIG_TOKEN', {
     providedIn: 'root',
     factory: () => APP_CONFIG,
 });

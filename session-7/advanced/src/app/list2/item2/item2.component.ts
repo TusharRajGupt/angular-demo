@@ -22,7 +22,7 @@ export class Item2Component implements OnInit, AfterViewInit, AfterContentInit {
   // @ViewChildren(LabelComponent) label;
 
   // @ContentChild('contactRef') slot;
-// 
+
   constructor() { }
 
   ngOnInit() {

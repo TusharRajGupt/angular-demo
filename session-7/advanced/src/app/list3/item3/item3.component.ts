@@ -1,15 +1,16 @@
-import { Component, OnInit, Input, Self, SkipSelf } from '@angular/core';
-import { RestService } from 'src/app/rest.service';
+import { Component, OnInit, Input, Self, SkipSelf, Optional } from '@angular/core';
+import { RestService2 } from './../../rest2.service';
 
 @Component({
   selector: 'app-item3',
   templateUrl: './item3.component.html',
-  styleUrls: ['./item3.component.scss'],
-  providers: [RestService],
+  providers: [
+    // RestService2
+  ],
 })
 export class Item3Component implements OnInit {
   @Input() user;
-  constructor(  private rest: RestService) { }
+  constructor(@SkipSelf() private rest: RestService2) { }
 
   ngOnInit() {
   }

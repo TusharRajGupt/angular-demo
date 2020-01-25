@@ -12,10 +12,10 @@ const httpOptions = {
 
 
 @Injectable(
-    { providedIn: 'root' }
+    // { providedIn: 'root' }
 )
 
-export class RestService {
+export class RestService2 {
 
     constructor(private http: HttpClient) {
         // console.log('Initiated');
@@ -25,8 +25,8 @@ export class RestService {
         return res || {};
     }
 
-    getUsers(): Observable<any> {
-        return this.http.get(endpoint + 'users').pipe(
+    getComment(): Observable<any> {
+        return this.http.get(endpoint + 'posts/7').pipe(
             map(this.extractData)
         );
     }

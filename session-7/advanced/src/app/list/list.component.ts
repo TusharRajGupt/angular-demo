@@ -5,7 +5,6 @@ import { RestService } from '../rest.service';
     selector: 'app-list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.scss'],
-    // providers: [RestService]
 })
 export class ListComponent implements OnInit {
 
