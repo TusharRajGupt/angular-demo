@@ -8,7 +8,7 @@ import { RestService2 } from '../rest2.service';
     templateUrl: './list3.component.html',
     styleUrls: ['./list3.component.scss'],
     providers: [
-        RestService2
+        // RestService2
     ]
 })
 export class List3Component implements OnInit {
@@ -18,7 +18,7 @@ export class List3Component implements OnInit {
 
     constructor(
         private rest: RestService,
-        private rest2: RestService2,
+        // private rest2: RestService2,
     ) {
     }
 
@@ -34,9 +34,9 @@ export class List3Component implements OnInit {
     }
 
     getComment() {
-        this.rest2.getComment().subscribe( data => {
-            this.comment = data.title;
-        });
+        // this.rest2.getComment().subscribe( data => {
+        //     this.comment = data.title;
+        // });
     }
 
 }

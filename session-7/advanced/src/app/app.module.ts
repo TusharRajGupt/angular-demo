@@ -29,7 +29,7 @@ import { Item4Component } from './list4/item4/item4.component';
     List3Component,
     Item3Component,
     List4Component,
-    Item4Component
+    Item4Component,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="73ddb3ed9f5c8922e97a5b2a474200d79088d6a6" datatype="html">
+        <source>Advanced Angular</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">descript</note>
+        <note priority="1" from="meaning">title</note>
+      </trans-unit>
+      <trans-unit id="714e9423e8eeab9de443e21541344f58eddbe5bd" datatype="html">
+        <source>Advanced Angular</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">desc</note>
+        <note priority="1" from="meaning">mean</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

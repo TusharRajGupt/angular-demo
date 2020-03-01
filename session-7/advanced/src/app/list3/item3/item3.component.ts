@@ -10,7 +10,7 @@ import { RestService2 } from './../../rest2.service';
 })
 export class Item3Component implements OnInit {
   @Input() user;
-  constructor(@SkipSelf() private rest: RestService2) { }
+  constructor(private rest: RestService2) { }
 
   ngOnInit() {
   }

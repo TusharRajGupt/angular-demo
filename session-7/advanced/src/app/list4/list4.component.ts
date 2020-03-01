@@ -16,9 +16,9 @@ export class List4Component implements OnInit {
 
     constructor(
         private rest: RestService,
-        @Inject(myToken) private config: OrgConfig,
+        // @Inject(myToken) private config: OrgConfig,
     ) {
-        console.log('config: ', config);
+        // console.log('config: ', config);
     }
 
     ngOnInit() {
