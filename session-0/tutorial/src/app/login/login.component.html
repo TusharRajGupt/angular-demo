@@ -1,1 +1,27 @@
-<p>login works!</p>
+<!-- <section> -->
+<mat-card class="form-card">
+    <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="">
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+            <mat-icon matPrefix>perm_identity</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="passwordHidden ? 'password' : 'text'" formControlName="password">
+            <mat-icon matPrefix>vpn_key</mat-icon>
+            <mat-icon matSuffix (click)="passwordHidden = !passwordHidden">
+                {{passwordHidden ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Log In</button>
+        </mat-card-actions>
+
+    </form>
+</mat-card>
+<!-- </section> -->

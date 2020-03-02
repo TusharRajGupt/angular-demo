@@ -1,6 +1,8 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app-material.module';
@@ -16,23 +18,25 @@ import { ForbiddenComponent } from './errors/forbidden/forbidden.component';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-    HeadComponent,
-    NeckComponent,
-    TorsoComponent,
-    ForbiddenComponent,
-    PageNotFoundComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    AppMaterialModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ForbiddenComponent,
+        HomeComponent,
+        HeadComponent,
+        LoginComponent,
+        NeckComponent,
+        PageNotFoundComponent,
+        TorsoComponent,
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        AppMaterialModule,
+        FlexLayoutModule,
+        ReactiveFormsModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
