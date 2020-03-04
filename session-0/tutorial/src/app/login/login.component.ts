@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from './../shared/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogData } from './../app.types';
+
 
 @Component({
     selector: 'app-login',
@@ -14,7 +18,10 @@ export class LoginComponent implements OnInit {
 
     passwordHidden = true;
 
-    constructor(private fb: FormBuilder) { }
+    constructor(
+        private fb: FormBuilder,
+        private dialog: MatDialog,
+    ) { }
 
     ngOnInit(): void {
     }
@@ -29,6 +36,19 @@ export class LoginComponent implements OnInit {
         } else if (this.username.hasError('minlength')) {
             return 'At least 6 characters required';
         }
+    }
+
+    unsavedFormGuard() {
+        const dialogConfig = new MatDialogConfig();
+        const data: ConfirmationDialogData = {
+            title: 'Discard changes?',
+            description: 'Your have unsaved changes. Are you sure you want to navigate away?',
+        };
+        dialogConfig.disableClose = true;
+        dialogConfig.data = data;
+
+        const dialogRef = this.dialog.open(ConfirmationDialogComponent, dialogConfig);
+        return dialogRef.afterClosed();
     }
 
     get username() { return this.loginForm.get('username'); }

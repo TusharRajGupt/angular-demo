@@ -25,12 +25,12 @@ export class ConfirmationDialogComponent implements OnInit {
 
     handleYes() {
         // console.log('handleYes');
-        this.dialogRef.close('Yes');
+        this.dialogRef.close(true);
     }
 
     handleNo() {
         // console.log('handleNo');
-        this.dialogRef.close('No');
+        this.dialogRef.close(false);
     }
 
 }
