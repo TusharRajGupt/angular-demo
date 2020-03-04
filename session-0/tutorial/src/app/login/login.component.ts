@@ -13,24 +13,17 @@ export class LoginComponent implements OnInit {
     });
 
     passwordHidden = true;
-    isFormValid: boolean;
 
     constructor(private fb: FormBuilder) { }
 
     ngOnInit(): void {
-        this.isFormValid = this.loginForm.status === 'VALID';
     }
 
     onSubmit() {
         console.log('submitted');
-        console.log(this.loginForm.status);
-        console.log(this.isFormValid);
     }
-    
+
     getUsernameError() {
-        console.log(this.isFormValid);
-        console.log(this.loginForm.status);
-        
         if (this.username.hasError('required')) {
             return 'You must enter a value';
         } else if (this.username.hasError('minlength')) {

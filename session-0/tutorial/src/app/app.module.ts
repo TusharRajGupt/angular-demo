@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ForbiddenComponent } from './errors/forbidden/forbidden.component';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
+import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.co
         NeckComponent,
         PageNotFoundComponent,
         TorsoComponent,
+        ConfirmationDialogComponent,
     ],
     imports: [
         BrowserModule,
@@ -37,6 +39,9 @@ import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.co
         ReactiveFormsModule,
     ],
     providers: [],
+    entryComponents: [
+        ConfirmationDialogComponent
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
