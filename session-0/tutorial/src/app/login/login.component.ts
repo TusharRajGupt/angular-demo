@@ -39,6 +39,9 @@ export class LoginComponent implements OnInit {
     }
 
     unsavedFormGuard() {
+        if (!this.loginForm.dirty) {
+            return true;
+        }
         const dialogConfig = new MatDialogConfig();
         const data: ConfirmationDialogData = {
             title: 'Discard changes?',
