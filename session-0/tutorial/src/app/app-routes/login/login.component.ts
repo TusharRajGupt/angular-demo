@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
 import { ConfirmationDialogData } from '../../app.types';
+import { AuthService } from './../../auth.service';
 
 @Component({
     selector: 'app-login',
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private dialog: MatDialog,
+        private authService: AuthService,
     ) { }
 
     ngOnInit(): void {

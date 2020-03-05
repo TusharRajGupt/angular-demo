@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from './route-guards/auth.guard';
 import { DashboardComponent } from '../app-routes/dashboard/dashboard.component';
+import { ForbiddenComponent } from './error-pages/forbidden/forbidden.component';
 import { HomeComponent } from '../app-routes/home/home.component';
 import { LoginComponent } from '../app-routes/login/login.component';
 import { PageNotFoundComponent } from './error-pages/page-not-found/page-not-found.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent, canDeactivate: [UnsavedFormGuard] },
     { path: 'home', component: HomeComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'forbidden', component: ForbiddenComponent },
     { path: '', component: HomeComponent },
     { path: '**', component: PageNotFoundComponent },
 ];
