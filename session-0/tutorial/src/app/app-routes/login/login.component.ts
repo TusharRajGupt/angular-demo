@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from './../shared/confirmation-dialog/confirmation-dialog.component';
-import { ConfirmationDialogData } from './../app.types';
-
+import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogData } from '../../app.types';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
     loginForm = this.fb.group({
         username: ['', [Validators.required, Validators.minLength(6)]],

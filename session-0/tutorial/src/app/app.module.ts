@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppMaterialModule } from './app-material.module';
 
 import { AppComponent } from './app.component';
@@ -12,18 +12,20 @@ import { HeadComponent } from './app-layout/head/head.component';
 import { NeckComponent } from './app-layout/neck/neck.component';
 import { TorsoComponent } from './app-layout/torso/torso.component';
 
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { ForbiddenComponent } from './errors/forbidden/forbidden.component';
-import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
+import { LoginComponent } from './app-routes/login/login.component';
+import { HomeComponent } from './app-routes/home/home.component';
+import { ForbiddenComponent } from './app-routing/error-pages/forbidden/forbidden.component';
+import { PageNotFoundComponent } from './app-routing/error-pages/page-not-found/page-not-found.component';
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
+import { DashboardComponent } from './app-routes/dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        DashboardComponent,
         ForbiddenComponent,
-        HomeComponent,
         HeadComponent,
+        HomeComponent,
         LoginComponent,
         NeckComponent,
         PageNotFoundComponent,
