@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from 'src/app/auth.service';
 
 @Component({
@@ -9,7 +10,11 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class NeckComponent implements OnInit {
 
-    constructor(private authService: AuthService, private router: Router) { }
+    constructor(
+        public authService: AuthService,
+        private router: Router,
+        private notif: MatSnackBar,
+    ) { }
 
     ngOnInit(): void {
     }
@@ -18,5 +23,6 @@ export class NeckComponent implements OnInit {
         console.log('Logging out');
         this.authService.logout();
         this.router.navigate(['/home']);
+        this.notif.open('Logged out successfully', '', { duration: 2000});
     }
 }

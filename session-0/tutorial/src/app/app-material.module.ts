@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 const materialMods = [
@@ -16,6 +17,7 @@ const materialMods = [
     MatIconModule,
     MatInputModule,
     MatSliderModule,
+    MatSnackBarModule,
     MatToolbarModule,
 ];
 
