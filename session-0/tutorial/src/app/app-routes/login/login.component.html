@@ -1,9 +1,11 @@
-<!-- <section> -->
+<section>
 <mat-card class="form-card">
     <mat-card-header>
         <mat-card-title>Login</mat-card-title>
     </mat-card-header>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" >
+
         <mat-form-field appearance="outline">
             <mat-label>Username</mat-label>
             <input matInput formControlName="username">
@@ -27,11 +29,16 @@
                 Password is required.
             </mat-error>
         </mat-form-field>
+        
+
+        <a routerLink="/reset-password">Forgot Password?</a>
+        <br>
+
 
         <mat-card-actions>
-            <button [disabled]="!(loginForm.status=='VALID')" mat-raised-button color="primary" type="submit">Log In</button>
+            <button class="loginButton" [disabled]="!(loginForm.status=='VALID')" mat-raised-button color="primary" type="submit">Continue</button>
         </mat-card-actions>
 
     </form>
 </mat-card>
-<!-- </section> -->
+</section>

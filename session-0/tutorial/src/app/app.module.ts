@@ -17,6 +17,7 @@ import { HomeComponent } from './app-routes/home/home.component';
 import { ForbiddenComponent } from './app-routing/error-pages/forbidden/forbidden.component';
 import { PageNotFoundComponent } from './app-routing/error-pages/page-not-found/page-not-found.component';
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
+import { ResetPasswordComponent } from './app-routes/reset-password/reset-password.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confir
         PageNotFoundComponent,
         TorsoComponent,
         ConfirmationDialogComponent,
+        ResetPasswordComponent,
     ],
     imports: [
         BrowserModule,
