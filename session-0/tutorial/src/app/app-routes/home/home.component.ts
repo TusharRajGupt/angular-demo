@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { PatronData } from './../../app.types';
+import { PatronService } from './patron.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+    clientList: PatronData[] = [{id: '0', name: 'yt'}];
 
-  ngOnInit(): void {
-  }
+    constructor(private patronService: PatronService) { }
+
+    ngOnInit() {
+        this.patronService.getPatrons()
+            .subscribe(res => {
+                this.clientList = res.data;
+            });
+    }
 
 }
