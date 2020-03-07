@@ -9,15 +9,12 @@ import { PatronService } from './patron.service';
 })
 export class HomeComponent implements OnInit {
 
-    clientList: PatronData[] = [{id: '0', name: 'yt'}];
+    clientList;
 
     constructor(private patronService: PatronService) { }
 
     ngOnInit() {
-        this.patronService.getPatrons()
-            .subscribe(res => {
-                this.clientList = res.data;
-            });
+        this.clientList = this.patronService.getPatrons();
     }
 
 }
