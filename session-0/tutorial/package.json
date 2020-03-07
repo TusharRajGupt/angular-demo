@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config ./proxy.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "nodemon server.js"
+    "serverjs": "nodemon server.js",
+    "node-server": "./node_modules/.bin/ts-node ./backend/server.ts --secure",
+    "server": "./node_modules/.bin/nodemon -w ./backend --ext \".ts\" --exec \"npm run node-server\""
   },
   "private": true,
   "dependencies": {
@@ -46,8 +48,8 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "nodemon": "^2.0.2",
     "protractor": "~5.4.3",
-    "ts-node": "~8.3.0",
+    "ts-node": "^8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "^3.7.5"
   }
 }

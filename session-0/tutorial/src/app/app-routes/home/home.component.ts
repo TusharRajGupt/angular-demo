@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PatronData } from './../../app.types';
-import { PatronService } from './patron.service';
 
 @Component({
     selector: 'app-home',
@@ -9,12 +8,9 @@ import { PatronService } from './patron.service';
 })
 export class HomeComponent implements OnInit {
 
-    clientList;
-
-    constructor(private patronService: PatronService) { }
+    constructor() { }
 
     ngOnInit() {
-        this.clientList = this.patronService.getPatrons();
     }
 
 }

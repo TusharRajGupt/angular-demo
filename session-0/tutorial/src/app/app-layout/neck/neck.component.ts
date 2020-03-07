@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from './../../app-routing/auth.service';
 
 @Component({
     selector: 'app-neck',
@@ -20,9 +20,5 @@ export class NeckComponent implements OnInit {
     }
 
     logout() {
-        console.log('Logging out');
-        this.authService.logout();
-        this.router.navigate(['/home']);
-        this.notif.open('Logged out successfully', '', { duration: 2000});
     }
 }

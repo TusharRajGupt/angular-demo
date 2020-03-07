@@ -3,7 +3,7 @@ export interface ConfirmationDialogData {
     description: string;
 }
 
-export interface PatronData {
+export interface User {
     id: string;
-    name: string;
+    username: string;
 }
