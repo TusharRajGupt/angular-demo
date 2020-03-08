@@ -17,11 +17,11 @@ export function signInUser(req: Request, res: Response) {
     // createSession(res, creds);
 }
 
-async function tryLoggingIn(creds, user: DbUser, res: Response){
+async function tryLoggingIn(creds, user: DbUser, res: Response) {
     try {
         const sessionId = await createSession(res, creds);
         res.cookie('SESSIONID', sessionId);
-        res.status(200).json({id: user.id, username: user.username});
+        res.status(200).json({ id: user.id, username: user.username });
 
     } catch (err) {
         console.log('Login unsuccessful');

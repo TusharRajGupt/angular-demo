@@ -34,18 +34,12 @@ export class LoginComponent implements OnInit {
         console.log('submitted');
         this.loginForm.markAsPristine();
 
-        // this.authService.login().subscribe(() => {
-        //     if (this.authService.isLoggedIn) {
-        //         const redirectUrl = '/admin';
-        //         this.router.navigate([redirectUrl]);
-        //     }
-        // });
-
         const val = this.loginForm.value;
 
         this.authService.signIn(val.username, val.password)
             .subscribe(res => {
-                console.log('User logged in')
+                const redirectUrl = '/admin';
+                this.router.navigate([redirectUrl]);
             });
     }
 

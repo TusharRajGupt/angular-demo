@@ -17,11 +17,15 @@ export class AuthService {
     private subject = new BehaviorSubject<User>(undefined);
 
     user$ = this.subject.asObservable().pipe(filter(user => !!user));
-    isLoggedIn$ = this.user$.pipe(map(user => !!user.id));
+    isLoggedIn$ = this.user$.pipe(map(user => !!user.username));
 
     constructor(private http: HttpClient) {
-        this.http.get<User>('/api/user')
-            .subscribe(user => this.subject.next(user ? user : ANON));
+        this.http.get<User>('/api/getUser')
+            .subscribe(user => {
+                console.log('user logged', user);
+                
+                this.subject.next(user ? user : ANON)
+            });
     }
 
     // store the URL so we can redirect after logging in

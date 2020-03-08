@@ -20,7 +20,7 @@ app.route('/api/signout')
     .post(signOutUser);
 
 app.route('/api/getUser')
-    .post(getUser);
+    .get(getUser);
 
 
 // launch an HTTP Server
