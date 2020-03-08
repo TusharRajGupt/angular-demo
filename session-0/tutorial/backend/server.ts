@@ -1,20 +1,13 @@
 import * as express from 'express';
 import { Application } from 'express';
 import * as https from 'https';
-import { signInUser } from './be-routes/sign-in.route';
+const bodyParser = require('body-parser');
 
+import { signInUser } from './be-routes/sign-in.route';
 
 const app: Application = express();
 
-
-
-const commandLineArgs = require('command-line-args');
-
-const optionDefinitions = [
-    { name: 'secure', type: Boolean },
-];
-
-const options = commandLineArgs(optionDefinitions);
+app.use(bodyParser.json());
 
 app.route('/api/signin')
     .post(signInUser);
@@ -22,7 +15,7 @@ app.route('/api/signin')
 
 // launch an HTTP Server
 const httpServer = app.listen(2300, () => {
-    console.log('HTTP Server running at https://localhost:' + 2300);
+    console.log('HTTP server running at https://localhost:' + 2300);
 });
 
 
