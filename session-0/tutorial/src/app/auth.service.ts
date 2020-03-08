@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
     isLoggedIn = false;
 
@@ -19,6 +20,10 @@ export class AuthService {
             delay(1000),
             tap(val => this.isLoggedIn = true)
         );
+    }
+
+    signin(): Observable<any> {
+        return this.http.get('/api/signin');
     }
 
     logout(): void {

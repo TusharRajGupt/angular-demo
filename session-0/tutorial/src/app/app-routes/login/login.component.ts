@@ -35,11 +35,15 @@ export class LoginComponent implements OnInit {
         this.loginForm.markAsPristine();
         // localStorage.setItem('username', this.username.value);
 
-        this.authService.login().subscribe(() => {
-            if (this.authService.isLoggedIn) {
-                const redirectUrl = '/admin';
-                this.router.navigate([redirectUrl]);
-            }
+        // this.authService.login().subscribe(() => {
+        //     if (this.authService.isLoggedIn) {
+        //         const redirectUrl = '/admin';
+        //         this.router.navigate([redirectUrl]);
+        //     }
+        // });
+
+        this.authService.signin().subscribe(val => {
+            console.log(val);
         });
     }
 
