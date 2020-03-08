@@ -2,10 +2,11 @@
     <mat-toolbar color="primary">
         <a mat-button routerLink=".">Home</a>
         <!-- <a mat-button routerLink="/dashboard">Dashboard</a> -->
-        <a mat-button *ngIf="authService.isLoggedIn" routerLink="/admin">Admin</a>
+        <a mat-button *ngIf="isLoggedIn$ | async" routerLink="/admin">Admin</a>
         <span class="example-fill-remaining-space"></span>
-        <a mat-button *ngIf="!authService.isLoggedIn" routerLink="/login">Login</a>
-        <a mat-button *ngIf="authService.isLoggedIn" routerLink="/admin/profile">Profile</a>
-        <a mat-button *ngIf="authService.isLoggedIn" (click)="logout()">Logout</a>
+        <p>Hello, {{username$ | async}}</p>
+        <a mat-button *ngIf="!(isLoggedIn$ | async)" routerLink="/login">Login</a>
+        <a mat-button *ngIf="isLoggedIn$ | async" routerLink="/admin/profile">Profile</a>
+        <a mat-button *ngIf="isLoggedIn$ | async" (click)="logout()">Logout</a>
     </mat-toolbar>
 </nav>

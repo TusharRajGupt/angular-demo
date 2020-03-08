@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         console.log('submitted');
         this.loginForm.markAsPristine();
-        // localStorage.setItem('username', this.username.value);
 
         // this.authService.login().subscribe(() => {
         //     if (this.authService.isLoggedIn) {
@@ -46,7 +45,7 @@ export class LoginComponent implements OnInit {
 
         this.authService.signIn(val.username, val.password)
             .subscribe(res => {
-                console.log(res)
+                console.log('User logged in')
             });
     }
 

@@ -1,32 +1,45 @@
+import { User } from './app.types';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
+import { Observable, of, BehaviorSubject } from 'rxjs';
+import { tap, map, shareReplay, filter } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+
+export const ANON: User = {
+    id: undefined,
+    username: ''
+}
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
 
-    constructor(private http: HttpClient) { }
+    private subject = new BehaviorSubject<User>(undefined);
 
-    isLoggedIn = false;
+    user$ = this.subject.asObservable().pipe(filter(user => !!user));
+    isLoggedIn$ = this.user$.pipe(map(user => !!user.id));
+
+    constructor(private http: HttpClient) {
+        this.http.get<User>('/api/user')
+            .subscribe(user => this.subject.next(user ? user : ANON));
+    }
 
     // store the URL so we can redirect after logging in
-    redirectUrl: string;
+    // redirectUrl: string;
 
-    login(): Observable<boolean> {
-        return of(true).pipe(
-            delay(1000),
-            tap(val => this.isLoggedIn = true)
-        );
+    signIn(username: string, password: string): Observable<User> {
+        return this.http.post<User>('/api/signin', { username, password })
+            .pipe(
+                shareReplay(),
+                tap(user => this.subject.next(user))
+            );
     }
 
-    signIn(username, password): Observable<any> {
-        return this.http.post('/api/signin', {username, password});
-    }
-
-    logout(): void {
-        this.isLoggedIn = false;
+    signOut(): Observable<any> {
+        return this.http.post('/api/signout', null)
+            .pipe(
+                shareReplay(),
+                tap(user => this.subject.next(ANON))
+            );
     }
 }
