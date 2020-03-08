@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PatronData } from './../../app.types';
 
 @Component({
     selector: 'app-home',

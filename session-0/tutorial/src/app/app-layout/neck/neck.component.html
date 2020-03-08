@@ -1,10 +1,10 @@
 <nav>
     <mat-toolbar color="primary">
         <a mat-button routerLink=".">Home</a>
-        <a mat-button routerLink="/admin">Admin</a>
+        <a mat-button *ngIf="isLoggedIn$ | async" routerLink="/admin">Admin</a>
         <span class="example-fill-remaining-space"></span>
-        <a mat-button routerLink="/login">Login</a>
-        <a mat-button routerLink="/admin/profile">Profile</a>
-        <a mat-button (click)="logout()">Logout</a>
+        <a mat-button *ngIf="isLoggedOut$ | async" routerLink="/login">Login</a>
+        <a mat-button *ngIf="isLoggedIn$ | async" routerLink="/admin/profile">Profile</a>
+        <a mat-button *ngIf="isLoggedIn$ | async" (click)="logout()">Logout</a>
     </mat-toolbar>
 </nav>

@@ -3,8 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
 import { ConfirmationDialogData } from '../../app.types';
-// import { AuthService } from './../../auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/app-routing/auth.service';
 
 @Component({
     selector: 'app-login',
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private dialog: MatDialog,
-        // private authService: AuthService,
+        private authService: AuthService,
         private router: Router
     ) { }
 
@@ -32,15 +32,14 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         console.log('submitted');
+        console.log(this.loginForm.value);
         this.loginForm.markAsPristine();
-        // localStorage.setItem('username', this.username.value);
+        this.signIn();
+    }
 
-        // this.authService.login().subscribe(() => {
-        //     if (this.authService.isLoggedIn) {
-        //         const redirectUrl = '/admin';
-        //         this.router.navigate([redirectUrl]);
-        //     }
-        // });
+    signIn() {
+        const val = this.loginForm.value;
+        this.authService.signIn(val.username, val.password);
     }
 
     getUsernameError() {
