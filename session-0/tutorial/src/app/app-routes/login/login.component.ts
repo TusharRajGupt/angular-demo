@@ -42,9 +42,12 @@ export class LoginComponent implements OnInit {
         //     }
         // });
 
-        this.authService.signin().subscribe(val => {
-            console.log(val);
-        });
+        const val = this.loginForm.value;
+
+        this.authService.signIn(val.username, val.password)
+            .subscribe(res => {
+                console.log(res)
+            });
     }
 
     getUsernameError() {

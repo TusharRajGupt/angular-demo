@@ -22,8 +22,8 @@ export class AuthService {
         );
     }
 
-    signin(): Observable<any> {
-        return this.http.get('/api/signin');
+    signIn(username, password): Observable<any> {
+        return this.http.post('/api/signin', {username, password});
     }
 
     logout(): void {

@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Application } from 'express';
 import * as https from 'https';
+import { signInUser } from './be-routes/sign-in.route';
 
 
 const app: Application = express();
@@ -15,11 +16,8 @@ const optionDefinitions = [
 
 const options = commandLineArgs(optionDefinitions);
 
-app.use('/api/signin', (req, res, next) => {
-    res.status(200).json({
-        message: 'succesful'
-    });
-});
+app.route('/api/signin')
+    .post(signInUser);
 
 
 // launch an HTTP Server
